@@ -1,0 +1,12 @@
+export const add_Movie = "add_Movie";
+export const add_title = "add_title ";
+export const add_year = "add_year";
+export const add_link = "add_link";
+export const add_rate = "add_rate";
+export const delete_Movie = "delete_Movie";
+export const edit_Movie = "edit_Movie";
+export const search_value = "search_value";
+export const NameFilter = "NameFilter";
+export const Rate_value = "Rate_value";
+export const RateFilter = "RateFilter";
+export const set_details = "set_details";
