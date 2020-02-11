@@ -96,7 +96,7 @@ class PopUp extends React.Component {
                 </span>
               </div>
               <input
-                value={this.props.year}
+                value={this.props.year.replace(/[^0-9]/g ,"")}
                 type="text"
                 className="form-control "
                 placeholder="year"

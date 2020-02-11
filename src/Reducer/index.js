@@ -73,7 +73,11 @@ const initState = {
   link: "",
   rate: 0,
 
-  emptyinputs:false
+  emptyinputs:false,
+
+  isloading:false
+
+
 };
 // const counter=0
 //  const todoList=[]

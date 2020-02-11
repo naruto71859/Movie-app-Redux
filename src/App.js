@@ -6,28 +6,46 @@ import RatingFilter from "./components/RatingFilter";
 import NameFilter from "./components/NameFilter";
 import { connect } from "react-redux";
 import DetailsContainer from "./components/Details";
-import { Route,Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import PopUpContainer from "./components/PopUp";
+import Hoc from "./components/Hoc";
 
-function App({ Movies }) {
- 
-  return (
-    <div className="m-0">
-      <div className=" d-flex justify-content-around m-0 ">
-        <NameFilter />
-        <PopUpContainer />
-        <RatingFilter/>
+const Tohoc = Hoc(Movie_after_filter);
+class App extends React.Component {
+
+  state = {
+    isLoading: true
+  };
+  
+  componentDidMount =()=> {
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 500);
+  }
+  render() {
+   
+   
+
+    return (
+      <div className="m-0">
+       
+        <div className=" d-flex justify-content-around m-0 ">
+          
+          <NameFilter/>
+          <PopUpContainer />
+          <RatingFilter />
+        </div>
+        <Switch>
+          <Route exact path="/" render={ (props)=> <Tohoc {...props} isLoading={this.state.isLoading} />} />
+          <Route exact path="/Details/:id" component={DetailsContainer} />
+          {/* props.match.params.id */}
+        </Switch>
+        <div className="m-5 "></div>
+
+        <div></div>
       </div>
-<Switch>
-      <Route exact path="/" component={Movie_after_filter} />
-      <Route exact path="/Details/:id" component={DetailsContainer} />
-      {/* props.match.params.id */}
-</Switch>
-      <div className="m-5 "></div>
-
-      <div></div>
-    </div>
-  );
+    );
+  }
 }
 
 const mapStateToProps = state => {

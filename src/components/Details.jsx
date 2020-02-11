@@ -6,7 +6,7 @@ const Details = ({ Movies, match }) => {
   const Movie = Movies.find(el => el.id === +match.params.id); //   +  replace parseInt()
   // find return an object  not an array
   //if we use filter we have to right Movies.filter(......)[0] ==> this is an object
-
+ 
   return (
     <div className="d-flex justify-content-center align-items-center m-2 ">
       <div className="card mb-3" style={{ maxWidth: "540px" }}>
